@@ -9,12 +9,8 @@ from training_Validation_Insertion import train_validation
 import flask_monitoringdashboard as dashboard
 from predictFromModel import prediction
 
-# os.putenv('LANG', 'en_US.UTF-8')
-# os.putenv('LC_ALL', 'en_US.UTF-8')
 
 app = Flask(__name__)
-# dashboard.bind(app)
-# CORS(app)
 
 
 @app.route("/", methods=['GET'])
@@ -89,10 +85,6 @@ def trainRouteClient():
         return Response("Error Occurred! %s" % e)
     return Response("Training successfull!!")
 
-#port = int(os.getenv("PORT",5001))
+
 if __name__ == "__main__":
-    # host='0.0.0.0'
-    # httpd = simple_server.make_server( host,port, app)
-    # print("Serving on %s %d" % ( host,port))
-    # httpd.serve_forever()
-    app.run(host='127.0.0.1', port=8001, debug=True)
+	app.run(debug=True)
